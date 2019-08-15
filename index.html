@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/main.js">
+    </script>
+    <script src="assets/js/api.js">
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="col-12 header">
+                <h1 class="title" id="title">Name of the Application<span class="sr-only">Name of the Application</span></h1>
+                <h2 class="sub-title">Interactiv search for your night out<span class="sr-only">Interactiv search for your night out</span></h2>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <div class="background-image-container">
+            <img class="image-container" src="assets/images/main-background-image.jpg" alt="Main-background-image">
+            <div class="search-box">
+                <div class="input-field">
+                    <div id="enter-city">
+                    </div>
+                    <input class="input1" id="search-places" type="search" placeholder="Chose your Destination" oninput="displayMessage()">
+                    <select class="custom-select" id="inputGroupSelect01">
+                                          <option selected >Choose...</option>
+                                          <option value="1">Bars/Restaurants</option>
+                                          <option value="2">Accomodation</option>
+                                          <option value="3">Atractions</option>
+                                        </select>
+                    <div class="search-button">
+                        <button id="button" class="btn btn-md" type="submit" onclick="displayMap()">Search</button>
+                    </div>
+
+                </div>
+                <div class="map-container" id="map-container">
+                    <div id="map">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="container-fluid footer-container ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col ">
+                    <ul class="list-inline ">
+                        <li class="list-inline-item name-surname ">© Christian Plesca</li>
+                        <li class="list-inline-item go-top "><a href="#title" class="go-top">Go Top</a><i class="fa fa-arrow-circle-up "></i>
+                        </li>
+                        <li class="list-inline-item powered-by ">Powered by:</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRM7YztY_z9XS-5UfyJ2IK2xhl3RAHiEY&libraries=places&callback=searchPlaces "></script>
+</body>
+
+
+</html>
