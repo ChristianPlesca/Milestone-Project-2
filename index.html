@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/main.js">
     </script>
@@ -31,7 +32,7 @@
                 <div class="input-field">
                     <div id="enter-city">
                     </div>
-                    <input class="input1" id="search-places" type="search" placeholder="Chose your Destination" oninput="displayMessage()">
+                    <input class="input1" id="search-places" type="search" placeholder="Chose your Destination" oninput="warningMessageOnInput()">
                     <select class="custom-select" id="inputGroupSelect01">
                                           <option selected >Choose...</option>
                                           <option value="1">Bars/Restaurants</option>
@@ -39,12 +40,16 @@
                                           <option value="3">Atractions</option>
                                         </select>
                     <div class="search-button">
-                        <button id="button" class="btn btn-md" type="submit" onclick="displayMap()">Search</button>
+                        <button id="button" class="btn btn-md" type="submit" onclick="warningMessageOnButtonClick()">Search</button>
+
+
                     </div>
 
                 </div>
                 <div class="map-container" id="map-container">
+
                     <div id="map">
+
                     </div>
 
                 </div>
@@ -66,7 +71,7 @@
             </div>
         </div>
     </footer>
-    <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRM7YztY_z9XS-5UfyJ2IK2xhl3RAHiEY&libraries=places&callback=searchPlaces "></script>
+    <script type="text/javascript " src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRM7YztY_z9XS-5UfyJ2IK2xhl3RAHiEY&libraries=places&callback=initMap"></script>
 </body>
 
 
