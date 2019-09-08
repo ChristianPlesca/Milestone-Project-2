@@ -57,6 +57,11 @@ html {
     margin-top: 12px;
 }
 
+.fa-map-marker {
+    text-align: center;
+    margin-right: 5px;
+}
+
 .input-field {
     text-align: center;
 }
