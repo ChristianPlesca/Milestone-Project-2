@@ -28,8 +28,10 @@ html {
 /*--------------------------------Background Images---------------------*/
 
 .background-image-container {
+
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    background: url("../images/main-background-image.jpg") no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -40,16 +42,14 @@ html {
     position: relative;
 }
 
-.image-container {
-    height: 100vh;
-    width: 100%;
-}
+
 
 
 /*---------------------------------Search Bar-----------------------------*/
 
 .search-box {
-    position: absolute;
+    position: relative;
+    
 }
 
 .search-button {
@@ -144,11 +144,48 @@ select:focus {
 .map {
     position: relative !important;
     margin-top: 50px;
-    width: 1200px;
-    height: 700px;
+    width: 100%;
+    height: 850px;
     border-radius: 20px;
 }
 
+
 .map-container {
     text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
 }
+
+/*------------------------------------------Table-------------------*/
+#listing 
+
+  .place_icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  
+
+  .listContainer {
+      margin:20px;
+      width: 100px;
+      height: 200px;
+      width: 300px;
+      cursor: pointer;
+      border-radius:5px;
+      display: inline-table;
+    
+  }
+
+  .locationNameContainer {
+      font-size: 17px;
+  }
+  .placeIcon {
+      margin:5px
+  }
+
+  #results {
+      text-align: center;
+      display:inline-table;
+  }
+ 
