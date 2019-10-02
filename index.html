@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/main.js">
     </script>
@@ -20,43 +20,77 @@
     <header>
         <nav>
             <div class="col-12 header">
-                <h1 class="title" id="title">Name of the Application<span class="sr-only">Name of the Application</span></h1>
-                <h2 class="sub-title">Interactiv search for your night out<span class="sr-only">Interactiv search for your night out</span></h2>
+                <h1 class="title" id="title">Night Out<span class="sr-only">Night Out</span></h1>
+                <h2 class="sub-title">Interactive search for your Night Out<span class="sr-only">Interactive search for your Night Out</span></h2>
             </div>
         </nav>
-    </header>
-    <div>
-        <div class="background-image-container">
-            <img class="image-container" src="assets/images/main-background-image.jpg" alt="Main-background-image">
+    </header> 
+        <div class="background-image-container" id = "background-image-container">
+        
+            
+          
             <div class="search-box">
                 <div class="input-field">
                     <div id="enter-city">
                     </div>
                     <input class="input1" id="search-places" type="search" placeholder="Chose your Destination" oninput="warningMessageOnInput()">
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="input-select-group">
                                           <option selected >Choose...</option>
-                                          <option value="1">Bars/Restaurants</option>
-                                          <option value="2">Accomodation</option>
-                                          <option value="3">Atractions</option>
+                                          <option value="1">Restaurants</option>
+                                          <option value="2">Bars</option>
+                                          <option value="3">Accommodation</option>
+                                          <option value="4">Night Clubs</option>
                                         </select>
                     <div class="search-button">
-                        <button id="button" class="btn btn-md" type="submit" onclick="warningMessageOnButtonClick()">Search</button>
-
-
+                        <button id="button" class="btn btn-md" type="submit" onclick="warningMessageOnButtonClick();initMap();changeHeight();">Search</button>
                     </div>
-
                 </div>
+              
                 <div class="map-container" id="map-container">
-
-                    <div id="map">
-
+                        
+                    <div id="map">  
                     </div>
-
+                  </div>
+                  <div class = "table-container">
+                      <div id="listing">
+                        <div id="resultsTable" >
+                          <div id="results"></div>
+                          </div>
+                      </div>
+                    </div>
                 </div>
-            </div>
-
-        </div>
-    </div>
+                      <div style="display: none">
+                        <div id="info-content">
+                          <table>
+                            <tr id="iw-url-row" class="iw_table_row">
+                              <td id="iw-icon" class="iw_table_icon"></td>
+                              <td id="iw-url"></td>
+                            </tr>
+                            <tr id="iw-address-row" class="iw_table_row">
+                              <td class="iw_attribute_name">Address:</td>
+                              <td id="iw-address"></td>
+                            </tr>
+                            <tr id="iw-phone-row" class="iw_table_row">
+                              <td class="iw_attribute_name">Telephone:</td>
+                              <td id="iw-phone"></td>
+                            </tr>
+                            <tr id="iw-rating-row" class="iw_table_row">
+                              <td class="iw_attribute_name">Rating:</td>
+                              <td id="iw-rating"></td>
+                            </tr>
+                            <tr id="iw-website-row" class="iw_table_row">
+                              <td class="iw_attribute_name">Website:</td>
+                              <td id="iw-website"></td>
+                            </tr>
+                          </table>
+                        </div>
+                </div>
+              
+              </div>
+            
+    
+    
+    
     <footer class="container-fluid footer-container ">
         <div class="container ">
             <div class="row ">
@@ -66,6 +100,7 @@
                         <li class="list-inline-item go-top "><a href="#title" class="go-top">Go Top</a><i class="fa fa-arrow-circle-up "></i>
                         </li>
                         <li class="list-inline-item powered-by ">Powered by:</li>
+                        
                     </ul>
                 </div>
             </div>
