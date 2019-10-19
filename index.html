@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>NightOut</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
@@ -18,17 +18,20 @@
 
 <body>
     <header>
+      <!-- Navigation Bar / Logo Bar-->
         <nav>
             <div class="col-12 header">
-                <h1 class="title" id="title">Night Out<span class="sr-only">Night Out</span></h1>
-                <h2 class="sub-title">Interactive search for your Night Out<span class="sr-only">Interactive search for your Night Out</span></h2>
+              <img id = "logo" class = "logo" src="assets/images/logo.png" alt = "Logo">
+            
             </div>
+            
         </nav>
-    </header> 
+    </header>
+    <!-- Background Image-->
         <div class="background-image-container" id = "background-image-container">
         
             
-          
+          <!-- Search box / Inputs-->
             <div class="search-box">
                 <div class="input-field">
                     <div id="enter-city">
@@ -41,24 +44,29 @@
                                           <option value="3">Accommodation</option>
                                           <option value="4">Night Clubs</option>
                                         </select>
+                    <!-- Search Button-->
                     <div class="search-button">
-                        <button id="button" class="btn btn-md" type="submit" onclick="warningMessageOnButtonClick();initMap();changeHeight();">Search</button>
+                        <button id="button" class="btn  btn-dark" type="submit" onclick="warningMessageOnButtonClick();changeHeight();">Search</button>
                     </div>
                 </div>
-              
+              <!-- MAP-->
                 <div class="map-container" id="map-container">
                         
                     <div id="map">  
                     </div>
                   </div>
-                  <div class = "table-container">
-                      <div id="listing">
-                        <div id="resultsTable" >
-                          <div id="results"></div>
-                          </div>
-                      </div>
-                    </div>
-                </div>
+                  
+                  <!-- Cards Section-->
+            <div class = "cards-container">
+              <div id="listing">
+                <div id="resultsCards" >
+                  <div id="results"></div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    
+                <!-- Info on Markers Click Section-->
                       <div style="display: none">
                         <div id="info-content">
                           <table>
@@ -85,21 +93,22 @@
                           </table>
                         </div>
                 </div>
+                
               
               </div>
             
     
-    
-    
+    <!-- Footer-->
     <footer class="container-fluid footer-container ">
         <div class="container ">
             <div class="row ">
                 <div class="col ">
                     <ul class="list-inline ">
                         <li class="list-inline-item name-surname ">© Christian Plesca</li>
-                        <li class="list-inline-item go-top "><a href="#title" class="go-top">Go Top</a><i class="fa fa-arrow-circle-up "></i>
+                        <li class="list-inline-item go-top "><a href="#logo" class="go-top">Go Top</a><i class="fa fa-arrow-circle-up "></i>
                         </li>
-                        <li class="list-inline-item powered-by ">Powered by:</li>
+                        
+                        <li class="list-inline-item powered-by ">Powered by:<img class = "powered-by-google" src="assets/images/powered-by-google.png" alt = "Powered By Google"></li>
                         
                     </ul>
                 </div>
