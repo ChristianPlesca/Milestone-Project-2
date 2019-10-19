@@ -6,18 +6,20 @@ html {
 /*--------------------------------Header---------------------*/
 
 .header {
-    background-color: #302d2d;
+    background-color:#1e1e21;
     height: auto;
     width: 100%;
+    text-align: center;
+    
+    
 }
 
-.title,
-.sub-title {
+.logo {
     margin: 0;
     text-align: center;
-    color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    color: #b3b3b3;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .title {
@@ -64,6 +66,7 @@ html {
 
 .input-field {
     text-align: center;
+    margin-top: 20px;
 }
 
 .input1,
@@ -76,7 +79,7 @@ html {
 }
 
 .enter-input {
-    color: white;
+    color: #1ed761;
 }
 
 .loader {
@@ -102,8 +105,17 @@ select:focus {
     text-align: center;
 }
 
+@media (max-width:414px){
+    .list-inline{
+        display: grid;
+    }
+    .powered-by,.go-top,.name-surname{
+        padding: 5px !important;
+    }
+}
+
 .footer-container {
-    background-color: #302d2d;
+    background-color: #1e1e21;
 }
 
 .name-surname {
@@ -120,6 +132,7 @@ select:focus {
     color: #b3b3b3;
     text-align: center;
     text-decoration: none !important;
+    cursor: pointer;
 }
 
 .go-top:hover {
@@ -132,10 +145,13 @@ select:focus {
     padding: 10px;
     margin-top: 10px;
     font-size: 15px;
+    font-family: 'Varela', sans-serif;
+    
 }
 
-.fa {
-    padding-left: 5px;
+
+.powered-by-google {
+    margin: 5px;
 }
 
 
@@ -145,35 +161,52 @@ select:focus {
     position: relative !important;
     margin-top: 50px;
     width: 100%;
-    height: 850px;
+    height: 100vh;
     border-radius: 20px;
 }
 
 
 .map-container {
     text-align: center;
-    margin-left: 60px;
-    margin-right: 60px;
+    
+   
 }
 
-/*------------------------------------------Table-------------------*/
-#listing 
+@media (max-width:1024px){
+    .map-container {
+        margin-left: 10px;
+    margin-right: 10px;
+    }
+}
+
+/*------------------------------------------Info-Cards-------------------*/
+
 
   .place_icon {
-    width: 24px;
-    height: 24px;
+    border-radius: 5px !important;
+    margin:5px;
+  }
+
+  .gm-ui-hover-effect {
+      margin: 5px ;
+  }
+
+  .iw-rating {
+      font-size: 20px;
   }
 
   
 
   .listContainer {
-      margin:20px;
-      width: 100px;
+      margin:10px;
       height: 200px;
       width: 300px;
       cursor: pointer;
       border-radius:5px;
       display: inline-table;
+      background-color:#1e1e21 !important;
+      color: #ded4b2;
+      opacity: 0.9;
     
   }
 
@@ -181,11 +214,69 @@ select:focus {
       font-size: 17px;
   }
   .placeIcon {
-      margin:5px
+      margin:5px;
+      width: 300px;
+      height: 170px;
   }
 
   #results {
       text-align: center;
       display:inline-table;
+     
   }
- 
+  
+  /*------------------------------------------Media-Queries-------------------*/
+  @media(min-width:320px) and (max-width:414px){
+    .results{
+          width: 100%;
+          
+      }
+  }
+  @media(min-width:415px) and (max-width:568px){
+    .results{
+          width: 550px;
+          
+      }
+  }
+  @media(min-width:569px) and (max-width:667px){
+    .results{
+          width: 640px;
+          
+      }
+  }
+  @media(min-width:668px) and (max-width:736px){
+    .results{
+          width: 725px;
+          
+      }
+  }
+  @media(min-width:737px) and (max-width:823px){
+    .results{
+          width: 750px;
+          
+      }
+  }
+
+  @media(min-width:824px) and (max-width:1024px){
+    .results{
+          width: 1000px;
+          
+      }
+  }
+
+  
+  @media(min-width:1025px) and (max-width:1366px){
+    .results{
+          width: 1330px;
+          
+      }
+  }
+  @media(min-width:1367px) and (max-width:2000px){
+    .results{
+          width: 1800px;
+          
+      }
+  }
+  
+  
+  
