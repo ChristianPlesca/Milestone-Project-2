@@ -165,6 +165,8 @@ select:focus {
 
 .map-container {
     text-align: center;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 @media (max-width:1024px) {
@@ -223,51 +225,3 @@ select:focus {
 
 
 /*------------------------------------------Media-Queries-------------------*/
-
-@media(min-width:320px) and (max-width:425px) {
-    .results {
-        width: 100%;
-    }
-}
-
-@media(min-width:426px) and (max-width:568px) {
-    .results {
-        width: 550px;
-    }
-}
-
-@media(min-width:569px) and (max-width:667px) {
-    .results {
-        width: 640px;
-    }
-}
-
-@media(min-width:668px) and (max-width:736px) {
-    .results {
-        width: 725px;
-    }
-}
-
-@media(min-width:737px) and (max-width:823px) {
-    .results {
-        width: 750px;
-    }
-}
-
-@media(min-width:824px) and (max-width:1024px) {
-    .results {
-        width: 1000px;
-    }
-}
-
-@media(min-width:1025px) and (max-width:1366px) {
-    .results {
-        width: 1330px;
-    }
-}
-
-@media(min-width:1367px) and (max-width:2000px) {
-    .results {
-        width: 1800px;
-    }
-}
