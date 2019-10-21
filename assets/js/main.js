@@ -1,6 +1,6 @@
 
 
-var infoWindow, map,places;
+var infoWindow, map,places,photo;
 var markers = [];
 var autocomplete;
 var hostnameRegexp = new RegExp('^https?://.+?/');
@@ -186,8 +186,8 @@ function warningMessageOnButtonClick() {
      
 
     // Map.
+    
     map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
         mapTypeControlOptions: {
             mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
                 'styled_map'
@@ -224,7 +224,7 @@ function geocodeAddress(geocoder) {
     if (status === 'OK') {
       map.fitBounds(results[0].geometry.viewport);
       
-      search()
+      searchPlaces()
     } else {
       $("#enter-city").html(`<h3 class = "enter-input">Please enter an Valid Location!</h3>`);
       $("#map").removeClass("map")
@@ -240,7 +240,7 @@ function changeHeight(){
 
   
 
-function search() {
+function searchPlaces() {
   // Get data from the desired location. 
   const inputSelectGroop = document.getElementById("input-select-group").value;
   if (inputSelectGroop == 3){
@@ -274,7 +274,7 @@ else if (inputSelectGroop == 4){
   
  else { if(inputSelectGroop == "Choose..."){
   $("#enter-city").html("");
-    $("#enter-city").html(`<h3 class = "enter-input">Please enter a Accomodation!</h3>`);
+    $("#enter-city").html(`<h3 class = "enter-input">Please Select One of the Options Available!</h3>`);
     $("#map").removeClass("map")
     document.getElementById("background-image-container").style.height = "100vh";
     document.getElementById("results").style.display = "none"
@@ -360,9 +360,15 @@ else if (inputSelectGroop == 4){
     let iconContainer = document.createElement('div');
     let nameContainer = document.createElement('div');
     let icon = document.createElement('img');
-    let photo = result.photos[0].getUrl({'maxWidth' : 550,'maxHeight' : 500})
+    if (result.photos){
+      photo = result.photos[0].getUrl({'maxWidth' : 550,'maxHeight' : 500})  
+    }
+    else {
+      photo = "assets/images/image-not-available.jpg"
+    }
     
     let name = document.createTextNode(result.name);
+    
     icon.setAttribute('src',photo );
     results.setAttribute("class","results")
     results.setAttribute("className", "results")
@@ -378,7 +384,8 @@ else if (inputSelectGroop == 4){
     iconContainer.setAttribute("idName","placeContainer")
     icon.setAttribute('class', 'placeIcon');
     icon.setAttribute('className', 'placeIcon');
-    
+    icon.setAttribute('id', 'placeIcon');
+    icon.setAttribute('idName', 'placeIcon');
     
     iconContainer.appendChild(icon);
     nameContainer.appendChild(name);
@@ -463,6 +470,7 @@ else if (inputSelectGroop == 4){
         } else {
           document.getElementById('iw-website-row').style.display = 'none';
         }
+ 
       }
 
 
