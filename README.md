@@ -65,7 +65,7 @@ The Issues I've encountered it was to do with mainly javascript and Maps and Pla
 I had to go through Google API documentation also did lots of researches on Stackoverflow
 
 ## Deployment
-Deployed using Github Pages - https://christianplesca.github.io/Milestone-Project-2/. directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named `index.html`.
+Deployed using Github Pages - https://christianplesca.github.io/Milestone-Project-2/ directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named `index.html`.
 
 ## Credits
 
