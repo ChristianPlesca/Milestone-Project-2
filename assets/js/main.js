@@ -2,10 +2,10 @@ var infoWindow, map, places, photo;
 var markers = [];
 var autocomplete;
 var hostnameRegexp = new RegExp('^https?://.+?/');
-var night_club_icon = "assets/images/night_club_icon.png"
-var bar_icon = "assets/images/bar_icons.png"
-var restaurant_icon = "assets/images/restaurant_icon.png"
-var accomodation_icon = "assets/images/accomodation_icon.png"
+var night_club_icon = "assets/images/night_club_icon.png";
+var bar_icon = "assets/images/bar_icons.png";
+var restaurant_icon = "assets/images/restaurant_icon.png";
+var accomodation_icon = "assets/images/accomodation_icon.png";
 
 //Pressing Enter will trigger the Search Button.
 function triggerSearchOnEnter() {
@@ -35,21 +35,17 @@ function warningMessageOnButtonClick() {
     const location = $("#search-places").val();
     $("#enter-city").html("");
     if (!location) {
-        document.getElementById("results").style.display = "none"
+        document.getElementById("results").style.display = "none";
         $("#enter-city").html(`<h3 class = "enter-input">Please enter an Input!</h3>`);
-        $("#map").removeClass("map")
+        $("#map").removeClass("map");
 
 
     } else if (location) {
-        document.getElementById("results").style.display = "inline-table"
-        $("#map").addClass("map")
+        document.getElementById("results").style.display = "inline-table";
+        $("#map").addClass("map");
 
     }
-    return;
-
 }
-
-
 
 function initMap() {
 
@@ -181,10 +177,7 @@ function initMap() {
             }
         ], { name: 'Night Mode' });
 
-
-
     // Map.
-
     map = new google.maps.Map(document.getElementById("map"), {
         mapTypeControlOptions: {
             mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
@@ -212,7 +205,7 @@ function initMap() {
     let geocoder = new google.maps.Geocoder();
     document.getElementById('button').addEventListener('click', function() {
         geocodeAddress(geocoder, map);
-    })
+    });
 }
 
 // Converts addresses like (street address, city, town etc ) into geographic coordinates (like latitude and longitude).
@@ -222,11 +215,11 @@ function geocodeAddress(geocoder) {
         if (status === 'OK') {
             map.fitBounds(results[0].geometry.viewport);
 
-            searchPlaces()
+            searchPlaces();
         } else {
             $("#enter-city").html(`<h3 class = "enter-input">Please enter an Valid Location!</h3>`);
-            $("#map").removeClass("map")
-            document.getElementById("background-image-container").style.height = "100vh"
+            $("#map").removeClass("map");
+            document.getElementById("background-image-container").style.height = "100vh";
         }
     });
 }
@@ -248,19 +241,19 @@ function searchPlaces() {
 
         };
     } else if (inputSelectGroop == 1) {
-        var search = {
+        search = {
             bounds: map.getBounds(),
             types: ['restaurant'],
 
         };
     } else if (inputSelectGroop == 2) {
-        var search = {
+        search = {
             bounds: map.getBounds(),
             types: ['bar'],
 
         };
     } else if (inputSelectGroop == 4) {
-        var search = {
+        search = {
             bounds: map.getBounds(),
             types: ["night_club"]
         };
@@ -268,9 +261,9 @@ function searchPlaces() {
         if (inputSelectGroop == "Choose...") {
             $("#enter-city").html("");
             $("#enter-city").html(`<h3 class = "enter-input">Please Select One of the Options Available!</h3>`);
-            $("#map").removeClass("map")
+            $("#map").removeClass("map");
             document.getElementById("background-image-container").style.height = "100vh";
-            document.getElementById("results").style.display = "none"
+            document.getElementById("results").style.display = "none";
         }
     }
     places.nearbySearch(search, function(results, status) {
@@ -317,10 +310,6 @@ function searchPlaces() {
 
 }
 
-
-
-
-
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
         if (markers[i]) {
@@ -352,26 +341,26 @@ function addResult(result, i) {
     let nameContainer = document.createElement('div');
     let icon = document.createElement('img');
     if (result.photos) {
-        photo = result.photos[0].getUrl({ 'maxWidth': 550, 'maxHeight': 500 })
+        photo = result.photos[0].getUrl({ 'maxWidth': 550, 'maxHeight': 500 });
     } else {
-        photo = "assets/images/image-not-available.jpg"
+        photo = "assets/images/image-not-available.jpg";
     }
 
     let name = document.createTextNode(result.name);
 
     icon.setAttribute('src', photo);
-    results.setAttribute("class", "results")
-    results.setAttribute("className", "results")
-    div.setAttribute("class", "listContainer")
-    div.setAttribute("className", "listContainer")
-    div.setAttribute("id", "listContainer")
-    div.setAttribute("idName", "listContainer")
-    nameContainer.setAttribute("class", "locationNameContainer")
-    nameContainer.setAttribute("className", "locationNameContainer")
-    iconContainer.setAttribute("class", "placeContainer")
-    iconContainer.setAttribute("className", "placeContainer")
-    iconContainer.setAttribute("id", "placeContainer")
-    iconContainer.setAttribute("idName", "placeContainer")
+    results.setAttribute("class", "results");
+    results.setAttribute("className", "results");
+    div.setAttribute("class", "listContainer");
+    div.setAttribute("className", "listContainer");
+    div.setAttribute("id", "listContainer");
+    div.setAttribute("idName", "listContainer");
+    nameContainer.setAttribute("class", "locationNameContainer");
+    nameContainer.setAttribute("className", "locationNameContainer");
+    iconContainer.setAttribute("class", "placeContainer");
+    iconContainer.setAttribute("className", "placeContainer");
+    iconContainer.setAttribute("id", "placeContainer");
+    iconContainer.setAttribute("idName", "placeContainer");
     icon.setAttribute('class', 'placeIcon');
     icon.setAttribute('className', 'placeIcon');
     icon.setAttribute('id', 'placeIcon');
@@ -384,9 +373,6 @@ function addResult(result, i) {
     results.appendChild(div);
 
 }
-
-
-
 
 function clearResults() {
     const results = document.getElementById('results');
@@ -409,7 +395,6 @@ function showInfoWindow() {
             buildIWContent(place);
 
         });
-
 }
 
 
@@ -463,7 +448,5 @@ function buildIWContent(place) {
 
 }
 
-
-
-$(document).ready(warningMessageOnInput)
-$(document).ready(triggerSearchOnEnter)
+$(document).ready(warningMessageOnInput);
+$(document).ready(triggerSearchOnEnter);
